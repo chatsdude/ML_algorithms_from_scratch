@@ -16,6 +16,8 @@ class KNN():
         heap=heapq.nsmallest(self.k,heap)
         results=[heap[i][1] for i in range(len(heap))]
         return Counter(results).most_common(1)[0][0]
+
+        
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 iris=datasets.load_iris()
