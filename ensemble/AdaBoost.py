@@ -3,13 +3,12 @@ import sys
 import os
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
-import traceback
 import pandas as pd 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-from tree.DecisionTree import DecisionTreeClassifier
+from tree.base.DecisionTreeBase import DecisionTreeBase
 
-class AdaBoostClassifier(DecisionTreeClassifier):
+class AdaBoostClassifier(DecisionTreeBase):
 
     def __init__(self,n_learners=10,max_depth=1,min_samples=2,num_features=None):
         self.n_learners = n_learners
@@ -30,7 +29,7 @@ class AdaBoostClassifier(DecisionTreeClassifier):
             X,y = self._create_dataset_using_sample_weights(X,y,updated_sample_weights)
 
             #Build a decision stump.
-            node = super()._build_decision_tree(X,y)
+            node = super()._build_decision_tree_classifier(X,y)
 
             #Find the misclassified samples.
             misclassified_idxs = self._find_misclassified_samples(X,y,node)
