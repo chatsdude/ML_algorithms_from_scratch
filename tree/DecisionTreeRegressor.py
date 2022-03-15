@@ -1,10 +1,9 @@
 import sys
 import numpy as np
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__)))
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
-from DecisionTreeBase import DecisionTreeBase
+from base.DecisionTreeBase import DecisionTreeBase
 
 
 class DecisionTreeRegressor(DecisionTreeBase):

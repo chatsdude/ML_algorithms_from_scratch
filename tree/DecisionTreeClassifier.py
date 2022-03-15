@@ -1,9 +1,8 @@
 import sys
 import os
 import numpy as np
-sys.path.append(os.path.join(os.path.dirname(__file__)))
 
-from DecisionTreeBase import DecisionTreeBase
+from base.DecisionTreeBase import DecisionTreeBase
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
